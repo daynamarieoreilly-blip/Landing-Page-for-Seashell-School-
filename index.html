@@ -1,0 +1,620 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#075a69">
+<meta name="description" content="Seashell Schools and Activities: weather-ready rebooking for independent surf and watersport schools on Ireland's Wild Atlantic Way.">
+<title>Seashell Schools and Activities | Make room for the next wave</title>
+<style>
+:root{
+  --ink:#093d4a;
+  --sea:#006d80;
+  --sun:#ffdc4e;
+  --coral:#ff6b62;
+  --foam:#e7fbf4;
+  --blue:#b3eff5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:#f5fff7;
+  font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;
+  overflow-x:hidden;
+}
+a{color:inherit}
+button,input{font:inherit}
+button,a,input{touch-action:manipulation}
+button:focus-visible,a:focus-visible,input:focus-visible{
+  outline:4px solid #fcba23;
+  outline-offset:3px;
+}
+.shell{max-width:1120px;margin:auto;padding:0 22px}
+.top{
+  position:relative;
+  background:#075a69;
+  color:white;
+  overflow:hidden;
+  isolation:isolate;
+}
+.top:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 18% 34%,#ffffff19 0 8px,transparent 9px);
+  z-index:-1;
+}
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:22px 0;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  line-height:1.05;
+  font-size:17px;
+  max-width:230px;
+}
+.mark{
+  display:grid;
+  place-items:center;
+  background:var(--sun);
+  color:var(--ink);
+  width:48px;
+  height:48px;
+  border-radius:17px;
+  transform:rotate(-10deg);
+  font-size:28px;
+}
+.nav a{
+  font-size:14px;
+  font-weight:800;
+  text-decoration:none;
+  border:2px solid #fff9;
+  padding:11px 14px;
+  border-radius:100px;
+}
+.hero{
+  position:relative;
+  min-height:590px;
+  display:grid;
+  align-items:center;
+  padding:42px 0 265px;
+}
+.hero-copy{position:relative;z-index:2;max-width:670px}
+.eyebrow{
+  font-size:12px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  font-weight:900;
+  color:#ffeb8e;
+}
+.hero h1{
+  font-size:clamp(3.1rem,8vw,6.4rem);
+  line-height:1.01;
+  letter-spacing:-.065em;
+  margin:17px 0 20px;
+}
+.hero h1 em{font-style:normal;color:var(--sun)}
+.hero p{
+  font-size:clamp(1.07rem,2.5vw,1.32rem);
+  max-width:580px;
+}
+.button{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-height:62px;
+  padding:14px 24px;
+  border-radius:18px;
+  background:var(--sun);
+  color:var(--ink);
+  font-weight:900;
+  text-decoration:none;
+  border:3px solid #073d49;
+  box-shadow:5px 6px 0 #093d4a;
+  cursor:pointer;
+}
+.button:active{
+  transform:translate(3px,3px);
+  box-shadow:2px 3px 0 #093d4a;
+}
+.button.light{background:white}
+.hero .button{margin-top:18px}
+.micro{font-size:13px;opacity:.86;margin-top:17px}
+.wavefield{
+  position:absolute;
+  bottom:-2px;
+  left:-5%;
+  width:110%;
+  height:345px;
+  pointer-events:none;
+}
+.wavefield svg{height:100%;width:100%}
+.swell1{animation:drift 6s ease-in-out infinite alternate}
+.swell2{animation:drift 4.5s ease-in-out infinite alternate-reverse}
+.swell3{animation:drift 7s ease-in-out infinite alternate}
+.float{
+  position:absolute;
+  pointer-events:none;
+  font-size:clamp(28px,6vw,54px);
+  animation:bob 4.5s ease-in-out infinite alternate;
+  filter:drop-shadow(0 8px 0 #003c4b3b);
+}
+.float.one{right:8%;top:15%}
+.float.two{right:19%;top:46%;animation-delay:-2s}
+.float.three{right:5%;top:55%;animation-delay:-1s}
+@keyframes drift{
+  from{transform:translateX(-65px) translateY(12px)}
+  to{transform:translateX(65px) translateY(-12px)}
+}
+@keyframes bob{
+  from{transform:translateY(0) rotate(-10deg)}
+  to{transform:translateY(-24px) rotate(9deg)}
+}
+section{padding:68px 0}
+.kicker{
+  display:inline-block;
+  font-weight:900;
+  text-transform:uppercase;
+  font-size:12px;
+  letter-spacing:.13em;
+  color:#006d80;
+}
+.heading{
+  font-size:clamp(2rem,5vw,3.6rem);
+  letter-spacing:-.05em;
+  line-height:1.08;
+  margin:12px 0 18px;
+}
+.problem{background:#ffdf68;position:relative}
+.quote{
+  font-size:clamp(1.3rem,3.5vw,2.1rem);
+  line-height:1.35;
+  font-weight:800;
+  max-width:850px;
+  margin:20px 0;
+}
+.tag{
+  display:inline-block;
+  background:white;
+  border:2px solid var(--ink);
+  border-radius:100px;
+  padding:5px 12px;
+  font-size:12px;
+  font-weight:900;
+}
+.steps{background:#effcf9}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:30px;
+}
+.card{
+  position:relative;
+  border:2px solid var(--ink);
+  border-radius:26px;
+  background:white;
+  padding:26px;
+  box-shadow:6px 7px 0 #093d4a;
+}
+.card:nth-child(2){background:#d1f2ff}
+.card:nth-child(3){background:#ffebc0}
+.num{
+  display:inline-grid;
+  place-items:center;
+  width:46px;
+  height:46px;
+  background:var(--coral);
+  border-radius:15px;
+  font-weight:950;
+  border:2px solid var(--ink);
+  font-size:23px;
+}
+.card h3{
+  font-size:24px;
+  letter-spacing:-.04em;
+  margin:20px 0 10px;
+}
+.card p{margin:0}
+.feature-strip{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+.chip{
+  background:#d5f5e7;
+  border:2px solid #0b6570;
+  padding:10px 14px;
+  border-radius:50px;
+  font-weight:750;
+  font-size:14px;
+}
+.price{background:#e3f4ff}
+.pricebox{
+  background:white;
+  border:3px solid var(--ink);
+  border-radius:30px;
+  padding:30px;
+  max-width:630px;
+  box-shadow:9px 10px 0 #ffbd51;
+}
+.price-row{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  align-items:baseline;
+}
+.big{
+  font-size:clamp(3.2rem,10vw,5.5rem);
+  font-weight:950;
+  letter-spacing:-.07em;
+  line-height:1;
+}
+.pricebox p{max-width:490px}
+.note{font-size:13px;color:#486873}
+.join{background:#ffb9a4;position:relative}
+.join .shell{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:center;
+}
+.formbox{
+  background:white;
+  border:3px solid var(--ink);
+  padding:24px;
+  border-radius:26px;
+  box-shadow:7px 8px 0 var(--ink);
+}
+label{display:block;font-weight:850;margin:10px 0 7px}
+input{
+  width:100%;
+  min-height:58px;
+  border:2px solid #416a73;
+  border-radius:13px;
+  padding:13px 15px;
+  background:#fff;
+}
+form .button{width:100%;margin-top:16px}
+.success{
+  background:#d9fae8;
+  border:2px solid #1e8464;
+  border-radius:15px;
+  padding:20px;
+  font-weight:800;
+}
+footer{
+  background:#093d4a;
+  color:#e8ffff;
+  padding:30px 0;
+}
+footer .shell{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+footer a{font-weight:850;text-decoration-thickness:2px}
+footer small{color:#c5e8e7}
+.quote sup a,.pricing-assumption sup a{
+  color:#064f72;
+  text-decoration:none;
+  font-size:.85em;
+}
+.pricing-assumption{font-weight:850;color:#075a69}
+.footnotes{
+  flex-basis:100%;
+  font-size:12px;
+  color:#d8efef;
+  border-top:1px solid #ffffff55;
+  padding-top:13px;
+}
+.footnotes p{margin:4px 0}
+.footnotes a{color:#e8ffff}
+.tiny-wave{
+  display:inline-block;
+  animation:bob 3s infinite alternate;
+}
+@media(max-width:760px){
+  .hero{min-height:610px;padding:28px 0 245px}
+  .float.one{right:7%;top:58%;font-size:37px}
+  .float.two{right:35%;top:70%;font-size:30px}
+  .float.three{display:none}
+  .cards,.join .shell{grid-template-columns:1fr}
+  .card{padding:23px}
+  .join .shell{gap:18px}
+  .nav{padding:16px 0}
+  .nav a{font-size:12px;padding:10px}
+  .hero h1{max-width:540px}
+  section{padding:55px 0}
+  .wavefield{height:265px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    animation:none!important;
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+}
+.build-notes{
+  background:#e9fbf6;
+  color:#093d4a;
+  padding:48px 0 64px;
+  scroll-margin-top:20px;
+}
+.build-notes .shell{max-width:760px}
+.build-notes h1{
+  font-size:clamp(2rem,7vw,3.5rem);
+  line-height:1.1;
+}
+.build-notes h2{margin-top:32px}
+.build-notes p,.build-notes li{line-height:1.65}
+.build-notes li{margin:8px 0}
+.build-notes .box{
+  background:white;
+  padding:20px;
+  border:2px solid #093d4a;
+  border-radius:20px;
+}
+.build-notes a{color:#006d80;font-weight:800}
+.inline-interest{
+  margin-top:26px;
+  padding-top:22px;
+  border-top:2px dashed #8baeb8;
+}
+.inline-interest h3{font-size:1.4rem;margin:0 0 6px}
+.inline-interest .button{width:100%;margin-top:16px}
+.build-notes[hidden]{display:none!important}
+.build-notes{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  background:#e9fbf6;
+  padding:78px 0 55px;
+}
+.notes-close{
+  position:fixed;
+  top:10px;
+  right:14px;
+  z-index:102;
+}
+.notes-close button{
+  border:2px solid #093d4a;
+  border-radius:12px;
+  background:white;
+  color:#093d4a;
+  font-weight:850;
+  min-height:54px;
+  padding:10px 20px;
+  cursor:pointer;
+}
+body.notes-open{overflow:hidden}
+</style>
+</head>
+
+<body id="top">
+<header class="top">
+  <div class="shell">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="logo">
+        <span class="mark" aria-hidden="true">〰</span>
+        <span>Seashell<br>Schools and Activities</span>
+      </div>
+      <a href="#pricing">Seasonal pricing ↗</a>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Made for the Wild Atlantic Way 🌊</div>
+        <h1>Weather changes.<br><em>Your bookings don't have to disappear.</em></h1>
+        <p>For independent surf and watersport schools: move weather-hit group bookings into a clear rebooking list, find sessions with room and keep sight of the money at risk.</p>
+        <a class="button" href="https://daynamarieoreilly-blip.github.io/Wild-Atlantic-Surfing/" target="_blank" rel="noopener noreferrer">Try the demo ↗</a>
+        <div class="micro">Explore a fictional working alpha. No sign-in needed.</div>
+      </div>
+      <span class="float one" aria-hidden="true">🏄</span>
+      <span class="float two" aria-hidden="true">☘️</span>
+      <span class="float three" aria-hidden="true">🐚</span>
+    </div>
+  </div>
+
+  <div class="wavefield" aria-hidden="true">
+    <svg viewBox="0 0 1000 240" preserveAspectRatio="none">
+      <path class="swell1" fill="#00a8b5" d="M-80 75 Q45 5 170 75 T420 75 T670 75 T920 75 T1170 75 L1170 250 L-80 250Z"/>
+      <path class="swell2" fill="#54d5c4" d="M-80 116 Q45 48 170 116 T420 116 T670 116 T920 116 T1170 116 L1170 250 L-80 250Z"/>
+      <path class="swell3" fill="#f5fff7" d="M-80 169 Q45 113 170 169 T420 169 T670 169 T920 169 T1170 169 L1170 250 L-80 250Z"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+  <section class="problem">
+    <div class="shell">
+      <span class="kicker">Sound familiar?</span>
+      <h2 class="heading">When the wind turns, the phone starts ringing.</h2>
+      <p class="quote">“The lesson's off, I've a paper diary full of names, and now I'm chasing everyone through messages to find them another slot.”<sup><a href="#footnotes" aria-label="See illustrative quote disclaimer">*</a></sup></p>
+      <p>Built around the everyday headache of weather-dependent group lessons on Ireland's west coast.</p>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="shell">
+      <span class="kicker">How the working demo works</span>
+      <h2 class="heading">Three steps. Back on track.</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="num">1</span>
+          <h3>See your bookings</h3>
+          <p>Review lesson sessions across four days, with names, group sizes, contact details and remaining places.</p>
+        </article>
+        <article class="card">
+          <span class="num">2</span>
+          <h3>Flag or cancel</h3>
+          <p>Tap <strong>Rebook customer</strong> or cancel an entire session. Affected bookings move into a saved follow-up list.</p>
+        </article>
+        <article class="card">
+          <span class="num">3</span>
+          <h3>Find their next wave</h3>
+          <p>Choose from the next three sessions with enough space. See 48-hour red alerts and the value of bookings still at risk.</p>
+        </article>
+      </div>
+
+      <div class="feature-strip">
+        <span class="chip">📱 Large mobile buttons</span>
+        <span class="chip">🌦 Weather-ready workflow</span>
+        <span class="chip">✉️ Opens customer email drafts</span>
+        <span class="chip">💾 Saves in the same browser</span>
+      </div>
+      <p class="note">The alpha is a browser-only prototype with fictional data. It does not send emails automatically or sync bookings between devices.</p>
+    </div>
+  </section>
+
+  <section class="price" id="pricing">
+    <div class="shell">
+      <span class="kicker">A season-first idea</span>
+      <h2 class="heading">Pay for your season.<br>Not the whole year.</h2>
+
+      <div class="pricebox">
+        <span class="pricing-assumption">Proposed seasonal pricing<sup><a href="#footnotes" aria-label="See pricing assumption disclaimer">†</a></sup></span>
+        <div class="price-row">
+          <span class="big">€150</span>
+          <strong>per 6-month season</strong>
+        </div>
+        <p><strong>Plus €99 one-time setup</strong> · €249 for the first six-month season, based on the proposed business model.</p>
+        <p>No year-round subscription in this proposed model. Commercial availability, support and payment arrangements are <strong>planned, not yet launched</strong>.</p>
+
+        <div class="inline-interest" id="interest">
+          <h3>Interested? Leave your details</h3>
+          <p class="note">Demonstration only: no details are sent, saved or added to a real waiting list.</p>
+
+          <div id="formArea">
+            <form id="interestForm">
+              <label for="school">School name</label>
+              <input id="school" name="school" autocomplete="organization" placeholder="Your school" required>
+
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.ie" required>
+
+              <button class="button" type="submit">Register interest →</button>
+            </form>
+          </div>
+
+          <div class="success" id="thanks" role="status" aria-live="polite" hidden>
+            🌊 Thank you for your interest! This is a demo form, so nothing has been sent or saved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell">
+    <div>
+      <strong>Seashell Schools and Activities</strong><br>
+      <small>Fictional product concept · Student assessment prototype</small>
+    </div>
+
+    <div>
+      <a href="#behind-the-build" id="openNotes">Behind the build ↗</a><br>
+      <small>Visuals: original CSS and SVG waves; emoji are platform-rendered symbols. No stock photos or third-party logos used.</small>
+    </div>
+
+    <div class="footnotes" id="footnotes">
+      <p><strong>*</strong> Illustrative, invented customer quote for this student concept; not a real customer statement or testimonial.</p>
+      <p><strong>†</strong> Pricing is an assumption for this assessment, not a live commercial offer. Product benefits refer to the linked fictional alpha only.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="behind-the-build" class="build-notes" role="dialog" aria-modal="true" aria-labelledby="buildTitle" hidden>
+  <div class="notes-close">
+    <button type="button" id="closeNotes" aria-label="Close Behind the build">✕ Close</button>
+  </div>
+
+  <div class="shell">
+    <h1 id="buildTitle">Behind the build 🌊</h1>
+    <p>Notes and claim-checking for the fictional Seashell Schools and Activities student landing page, created for an assessment on 19 October 2026.</p>
+
+    <h2>Who this is for</h2>
+    <p>Independent surf and watersport schools along Ireland's Wild Atlantic Way that run scheduled group lessons affected by weather. This is a chosen marketing niche, not a claim that real schools use the product.</p>
+
+    <h2>What the linked alpha actually does</h2>
+    <div class="box">
+      <ul>
+        <li>Shows four days of lesson sessions with names, group sizes and contact details.</li>
+        <li>Offers a large Rebook customer action and a separate Cancel entire session action.</li>
+        <li>Moves affected bookings to a saved follow-up list.</li>
+        <li>Shows up to three upcoming sessions with sufficient free places for the group.</li>
+        <li>Marks bookings waiting 48 hours or longer red.</li>
+        <li>Shows booking count, people waiting and potential revenue at risk based on fictional lesson pricing.</li>
+        <li>Opens a prepared customer email in the device's email application; a staff member must review and send it.</li>
+        <li>Uses browser localStorage: changes remain on that browser after refresh, but do not sync across devices.</li>
+      </ul>
+      <p><a href="https://daynamarieoreilly-blip.github.io/Wild-Atlantic-Surfing/">Open the working alpha ↗</a></p>
+    </div>
+
+    <h2>Assumptions, invented copy and planned features</h2>
+    <ul>
+      <li>The customer quotation on the landing page is <strong>invented</strong>, not a real testimonial.</li>
+      <li>€99 one-time setup and €150 per six-month season are <strong>proposed pricing assumptions</strong>, not verified market rates or a live sales offer.</li>
+      <li>A real commercial service, production support, multi-device synchronisation and automatic message delivery are <strong>not included in the current alpha</strong> and would require future development.</li>
+      <li>The interest form is a visual demonstration only: JavaScript prevents submission and shows a thank-you message. It does not send or store personal data.</li>
+      <li>The demo uses fictional customer records and fictional sample data. No real customer numbers, ratings, testimonials or sales results are claimed.</li>
+    </ul>
+
+    <h2>Visual sources and credits</h2>
+    <p>The animated wave artwork and decorative elements were created for this page using original CSS and inline SVG; no externally sourced photographs, stock imagery, real business logos or third-party brand assets are used. Surfboard, shamrock and shell emoji are rendered by the visitor's device/system emoji font, so their appearance varies by platform.</p>
+
+    <h2>Design decisions</h2>
+    <p>Phone-first layout, strong contrast, generous touch targets, one main sales action (interest form), and a separate Try the demo link. Motion is decorative and disabled automatically when the device requests reduced motion.</p>
+    <p class="note">Student assessment concept · Not a live commercial product.</p>
+  </div>
+</div>
+
+<script>
+document.getElementById('interestForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  document.getElementById('formArea').hidden=true;
+  document.getElementById('thanks').hidden=false;
+});
+
+const notes=document.getElementById('behind-the-build');
+const openNotes=document.getElementById('openNotes');
+const closeNotes=document.getElementById('closeNotes');
+
+function showNotes(e){
+  if(e)e.preventDefault();
+  notes.hidden=false;
+  document.body.classList.add('notes-open');
+  closeNotes.focus();
+}
+
+function hideNotes(){
+  notes.hidden=true;
+  document.body.classList.remove('notes-open');
+  openNotes.focus();
+}
+
+openNotes.addEventListener('click',showNotes);
+closeNotes.addEventListener('click',hideNotes);
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&!notes.hidden)hideNotes();
+});
+</script>
+</body>
+</html>
